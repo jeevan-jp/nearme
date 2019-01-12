@@ -24,6 +24,10 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
+/**
+ * import db uri from config
+ */
+
 
 server.listen(port);
 server.on('error', onError);
@@ -86,5 +90,7 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
+
+
   debug('Listening on ' + bind);
 }
