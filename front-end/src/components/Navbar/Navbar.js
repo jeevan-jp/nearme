@@ -28,8 +28,10 @@ class NavBar extends React.Component {
     return (
       <div>
         <StyledNav>
-          <StyledUL>
+          <StyledLeftUL>
             <StyledLI>Home</StyledLI>
+            <StyledLI>About</StyledLI>
+            <StyledLI>Contact Us</StyledLI>
             <StyledLI>
               <span>Categories ></span>
               <StyledDropdown>
@@ -38,9 +40,11 @@ class NavBar extends React.Component {
                 <a href="/">Kids</a>
               </StyledDropdown>
             </StyledLI>
-            <StyledLI>Track Order</StyledLI>
-            <StyledLI>About Us</StyledLI>
-          </StyledUL>
+          </StyledLeftUL>
+          <StyledRightUL>
+            <StyledLI>Order Status</StyledLI>
+            <StyledLI>Login/SignUp</StyledLI>
+          </StyledRightUL>
         </StyledNav>
       </div>
     );
@@ -58,10 +62,23 @@ const StyledNav = styled.nav`
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: white;
   height: 56px;
+  font-size: 13px;
 `;
 
-const StyledUL = styled.ul`
+const StyledLeftUL = styled.ul`
   display: flex;
+  width: 70%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+`;
+
+const StyledRightUL = styled.ul`
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -70,7 +87,7 @@ const StyledUL = styled.ul`
 
 const StyledLI = styled.li`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   padding: 10px;
   cursor: pointer;
